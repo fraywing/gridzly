@@ -62,8 +62,8 @@ $grid->main($gridClass,array(
 
 if(isset($_POST["getRecords"]) && isset($_POST["filter"])){
     $arr = array("colHeaders" => array("Name","Family","Friends","Date","Time"),
-                 "rows" => array(array("<select><option>Item</option><option>Items and one2</option></select>", "The fam", "Carol", "23323", "324124"),
-                                 array("Sarah", "The Jon", "Sam", "5656", "<button>Something</button>"),
+                 "rows" => array(array("<select><option value='a select value' name='select1'>Item</option><option>Items and one2</option></select>", "The fam", "Carol", "23323", "324124"),
+                                 array("Sarah", "The Jon", "Sam", "5656", "<button name='mycoolButton' value='a cool thing'>Something</button>"),
                                  array("Anderson", "2323m", "Carol", "2343", "4543"),
                                  array("Austin", "The fam", "Colleen", "65656", "22"),
                                  array("Auadvgaddaadsffasstin", "The fam", "Colleen", "65656", "22"),
