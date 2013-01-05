@@ -1,83 +1,203 @@
-.gridzlyGrid *{
-  -moz-box-sizing:border-box;
-     -webkit-box-sizing:border-box;
-    box-sizing:border-box;
-}
-.gridzlyGrid{
-  border: 1px solid rgba(255,255,255,0.8);
-  border-radius:3px;
-  padding: 1px;
-  box-shadow: 0 0 9px 0 rgba(2,2,2,0.3);
-}
-.gridzlyGrid-inner{
-    padding: 0px;
-    vertical-align: top;
-    margin: 0px;
-    padding: 5px;
-    font-family:sans-serif;
-    text-align: center;
-     border: 1px solid rgba(2,2,2,0.1);
-  border-radius:3px;
-  box-shadow: 0 0 1px 0 rgba(2,2,2,0.3);
-  
-  overflow: hidden;
-
-}
-.gridzlyGrid-innerRows{
-      overflow: hidden;
-  overflow-y: auto;
-  max-height: 500px;
-}
-.gridzlyGrid:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.gridzlyGridTitle{
-    font-size: 1.5em;
-    text-align: left;
-    position: relative;
-
-}
-.gridzlyGridTitle span{
-      vertical-align: super;
-}
-.gridzlyGridTitle input{
-    position: relative;
-    display: inline-block;
-    float: right;
-    margin: 5px;
-}
-
-.gridzlyHeadRow{
-    font-size: 1.1em;
-}
-.gridzlyHeadRow,.rowHolder{
-    display: inline-block;
-   
-    width:100%;
-    text-align: left;
-}
-.gridzly-header{
-       transition:all .1s ease-in-out;
--moz-transition: all .1s ease-in-out; /* Firefox 4 */
--webkit-transition: all .1s ease-in-out; /* Safari and Chrome */
--o-transition: all .1s ease-in-out; /* Opera */
-     display: inline-block;
-     text-align: left;
-      float: left;
-         padding: 0px 9px 3px 25px;
-          overflow: hidden;
-}
-.gridzly-row{
-   transition:all .1s ease-in-out;
--moz-transition: all .1s ease-in-out; /* Firefox 4 */
--webkit-transition: all .1s ease-in-out; /* Safari and Chrome */
--o-transition: all .1s ease-in-out; /* Opera */
-    text-align: left;
-    display: block;
-   float: left;
-    padding: 0px 9px 3px 25px;
-    white-space: nowrap;
-     overflow: hidden;
+.gridzlyGrid *{
+  -moz-box-sizing:border-box;
+     -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.gridzlyGrid button, .gridzlyGrid input:not(.gridzlyGridTitle-filter), .gridzlyGrid select{
+    -moz-box-sizing:border-box;
+     -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+  padding: 3px;
+  cursor:pointer;
+  margin-top: 1px;
+  border-radius: 5px;
+font-size: 1.03em;
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 0 3px 0 rgba(2,2,2,0.4);
+}
+.gridzlyGrid button:hover{
+  border: 1px solid rgb(171, 203, 216);
+   box-shadow:0 0 3px 0 rgba(57, 134, 174, 0.4);
+}
+.gridzlyGrid button:active{
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow:inset 0 1px 3px 0 rgba(2,2,2,0.4);
+}
+
+.gridzlyGrid select{
+ padding: 0px;
+}
+.gridzlyGrid{
+  border: 1px solid rgba(255,255,255,1);
+  border-radius:3px;
+  padding: 1px;
+    background: rgba(255,255,255,1);
+  box-shadow: 0 0 9px 0 rgba(2,2,2,0.3);
+}
+.gridzlyGrid-inner{
+    padding: 0px;
+    vertical-align: top;
+    margin: 0px;
+    padding: 5px;
+    background: rgba(255,255,255,1);
+    font-family:sans-serif;
+    text-align: center;
+     border: 1px solid rgba(2,2,2,0.1);
+  border-radius:5px;
+
+  box-shadow: 0 0 1px 0 rgba(2,2,2,0.3);
+  
+  overflow: hidden;
+
+}
+.gridzlyGrid-innerRows{
+      overflow: hidden;
+  overflow-y: auto;
+  width:100%;
+  max-height: 500px;
+  background: rgba(2,23,27,0.02);
+}
+.gridzlyGrid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.gridzlyGridTitle{
+    font-size: 1.5em;
+    text-align: left;
+    position: relative;
+      background: rgba(2,14,19,0.2);
+  color:#4d4d4d;
+  cursor: pointer;
+  padding: 4px;
+  padding-bottom: 0px;
+  border:1px solid rgba(2,2,2,0.2);
+  box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.5), 0 0 4px 0 rgba(2,2,2,0.4);
+  border-radius:  5px 5px 0 0 ;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+
+}
+.gridzlyGridTitle span:not(.gridzlyGridTitle-filter){
+
+  color:#5b5b5b;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 4px;
+ vertical-align: super;
+
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+.gridzlyGridTitle input{
+
+}
+
+.gridzlyHeadRow{
+  margin-top: 3px;
+    font-size: 1.2em;
+    box-shadow: 0 1px 1px -1px rgba(2,2,2,0.5),0 0px 2px 0px rgba(2,2,2,0.1);
+    
+}
+
+.gridzlyHeadRow,.rowHolder{
+    display: block;
+     overflow: hidden;
+    width:100%;
+    text-align: left;
+}
+.gridzlyHeadRow{
+    padding: 0px;
+
+}
+.gridzly-header{
+
+       transition:all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out; /* Firefox 4 */
+-webkit-transition: all .1s ease-in-out; /* Safari and Chrome */
+-o-transition: all .1s ease-in-out; /* Opera */
+ display: block;
+     text-align: left;
+      float: left;
+       padding: 0px 9px 3px 25px;
+          overflow: hidden;
+          white-space: nowrap;
+}
+
+.gridzly-more{
+  background: rgba(2,14,19,0.2);
+  color:#4d4d4d;
+  cursor: pointer;
+  padding: 4px;
+  border:1px solid rgba(2,2,2,0.2);
+  box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.5), 0 0 4px 0 rgba(2,2,2,0.4);
+  border-radius:  0 0 5px 5px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+.gridzly-more:active{
+   background: rgba(2,12,14,0.45);
+    box-shadow: inset 0 1px 2px 0 rgba(3,3,3,0.5), 0 0 0px 0 rgba(2,2,2,0.4);
+}
+.rowHolder .gridzly-row:last-child{
+  border-right:0px;
+  display: inline-block
+  overflow: hidden;
+
+}
+.rowHolder .gridzly-row:first-child{
+    border-left:0px;
+  display: inline-block
+  overflow: hidden;
+}
+.gridzlyGridTitle-filter{
+  box-shadow: inset 0 1px 1px 0 rgba(2,2,2,0.3) ;
+  border: 1px solid rgba(2,2,2,0.2) ;
+  font-size: 0.9em ;
+  padding: 0px ;
+  margin: 0px ;
+  border:none ;
+      position: relative;
+    display: inline-block;
+    float: right;
+    box-shadow: 0 0 4px 0 rgba(2,2,2,0.2);
+    margin-bottom: 5px ;
+    background: none ;
+   border-radius: 0px ;
+}
+.gridzlyGridTitle-filter input{
+  margin: 0px !important;
+ height: 30px;
+ color: rgba(2,2,2,0.7);
+   padding: 4px !important;
+   box-shadow: none !important;
+   font-size: 0.9em !important;
+  border-radius: 0px 3px  3px   0px  !important;
+}
+.gridzly-sIco{
+float: left;
+  display: inline-block;
+ width:36px;
+ height: 30px;
+ padding: 7px;
+
+  vertical-align: text-bottom;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtFJREFUeNqslm1IU2EUx+c0xYgGUrFPQn4JeoEgSISBIBT7VJ96IUpWTWVsS3NuTud8mdOWU3tTzJxiLwz6KoFRFAyDPgWDgdCXhCwYDIQi0DZ3b/8jZ+Om2713bA/8OPfe55z7v+c853m2MlEUNYUM//0JHcxtYARnQA1Igyh4D8J93Y7Y7riyQoSGA+M20gI6Bdd50OF1d/0pSMg3GiyHCQGT5HEEfARxUA0awTlwgOdXwfn+XudP1UJDI2NjME6+XQM3BzyuFdiDoALQS37D7wh/kJF9qYT18N1UFBoYDhhgVviWMrg45HVTBnpQvst9A/xATA+XmEYQ/i5FoX7fKImQGJXghK+/l0QOyYRsgW+IC8NeAUlQp5UT6RscOSYIogFowCREUtwIKRkoy8Pwd4E0qAQ3ZIUEQWgAGmaR1ySlgv3+Qc86Yj5zrEFeSBRqAdnEqM9L9ddyKZQgsX2Ii3K8vkIho2q+3GSbYjFVA/GZOJ1skCgIG4Cs3tnjpdr/VZkRsY24oxyfUMroC19W8t54B6pUJJN2dHvo3U18H1VqhghI8ILauHRJFc2wBf9WUMOxr2WFHgTvUXsGuL2N7Q63TSK0nYck/E7C389xn/CeiFbFgk6BGH/ZQ/td1wSo4hN7D5i7DL8PQEfNAOyKZ521vauBd/dL8IaPHRpfQYCOpOlH49/hR5uYfC3gQmadQDPmw7JCFnsnncbLfDLTb00zH5hnVTTDL3B15snk28yDnKVrs3Y0IuVl2kdcstMEAuthzZJS7iYOgqBOKpIzoxbLHWkmmbEELs3NPE5K/GphjoNazmAV87F8Kf4nZG6z5RUJzU4lNUWM7Ia91WrNK7LwbLookayQyWxp4q7aI7IYmilahEb52no8r8jz+aclEdnJCGs0m0vkxcJsyUR22htCQWoIZgmUXCTbdddNLddwfYr+i7xanCu5CI1/AgwANKP3SvkvVrQAAAAASUVORK5CYII=") no-repeat 50% 50%;
+ border-radius: 3px 0px    0px  3px   !important;
+  background-color:rgba(255,255,255,0.8);
+  border: 1px solid rgba(2,2,2,0.1);
+}
+.gridzly-row{
+   transition:all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out; /* Firefox 4 */
+-webkit-transition: all .1s ease-in-out; /* Safari and Chrome */
+-o-transition: all .1s ease-in-out; /* Opera */
+    text-align: left;
+    height: 40px;
+    display: block;
+   float: left;
+  
+    padding: 4px 9px 3px 25px;
+    white-space: nowrap;
+     overflow: hidden;
+     border:1px solid rgba(2,2,2,0.2);
+     border-top: 0px;
+     border-right:0px;
 }
