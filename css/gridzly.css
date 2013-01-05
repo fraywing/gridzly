@@ -1,0 +1,83 @@
+.gridzlyGrid *{
+  -moz-box-sizing:border-box;
+     -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.gridzlyGrid{
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius:3px;
+  padding: 1px;
+  box-shadow: 0 0 9px 0 rgba(2,2,2,0.3);
+}
+.gridzlyGrid-inner{
+    padding: 0px;
+    vertical-align: top;
+    margin: 0px;
+    padding: 5px;
+    font-family:sans-serif;
+    text-align: center;
+     border: 1px solid rgba(2,2,2,0.1);
+  border-radius:3px;
+  box-shadow: 0 0 1px 0 rgba(2,2,2,0.3);
+  
+  overflow: hidden;
+
+}
+.gridzlyGrid-innerRows{
+      overflow: hidden;
+  overflow-y: auto;
+  max-height: 500px;
+}
+.gridzlyGrid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.gridzlyGridTitle{
+    font-size: 1.5em;
+    text-align: left;
+    position: relative;
+
+}
+.gridzlyGridTitle span{
+      vertical-align: super;
+}
+.gridzlyGridTitle input{
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin: 5px;
+}
+
+.gridzlyHeadRow{
+    font-size: 1.1em;
+}
+.gridzlyHeadRow,.rowHolder{
+    display: inline-block;
+   
+    width:100%;
+    text-align: left;
+}
+.gridzly-header{
+       transition:all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out; /* Firefox 4 */
+-webkit-transition: all .1s ease-in-out; /* Safari and Chrome */
+-o-transition: all .1s ease-in-out; /* Opera */
+     display: inline-block;
+     text-align: left;
+      float: left;
+         padding: 0px 9px 3px 25px;
+          overflow: hidden;
+}
+.gridzly-row{
+   transition:all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out; /* Firefox 4 */
+-webkit-transition: all .1s ease-in-out; /* Safari and Chrome */
+-o-transition: all .1s ease-in-out; /* Opera */
+    text-align: left;
+    display: block;
+   float: left;
+    padding: 0px 9px 3px 25px;
+    white-space: nowrap;
+     overflow: hidden;
+}

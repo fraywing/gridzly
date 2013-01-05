@@ -1,0 +1,92 @@
+<?php
+
+class Gridzly{
+    private $defaults;
+    private $creds;
+    private $dbHandle;
+    public function main($props){
+    $this->defaults = (object)array("data" => "asdasd"); //this is ridiculous in PHP that you can initialize a function in a class-member funcion.
+    try{
+    $dbHandle = new PDO("mysql:host=$props->hostName;dbname=$props->dbName",$props->userName,$props->password); //pdo start
+    }catch(PDOException $e){
+        $e->getMessage();
+    }
+    if(isset($_POST["getData"])){
+        $json = json_decode($_POST["getData"]);
+        $this->getData($json);
+    }elseif(isset($_POST["putData"])){
+        $json = json_decode($_POST["putData"]);
+        $this->putData($json);
+    }
+    }
+    private function getData($statement){
+        $cleaned = mysql_real_escape_string($statement); //cleaned
+        //creds stuff
+        try{
+        $handle = $this->dbHandle;
+        $STH = $handle->query($statement);
+        
+        }
+        catch(PDOException $e) {
+         echo $e->getMessage();
+        }
+    }
+    private function putData($statement){
+        $cleaned = mysql_real_escape_string($statement); //cleaned
+        //creds stuff
+        try{
+        $handle = $this->dbHandle;
+        }
+        catch(PDOException $e) {
+          echo $e->getMessage();
+        }
+    }
+    
+    
+}
+
+
+$grid = new Gridzly();
+$gridClass = "adasfd";
+$grid->main($gridClass,array(
+                  userName => "sadasd",
+                  password => "sadsdaff",
+                  dbName => "kit",
+                  hostName => "asfdsad",
+                  usePDO => true,
+                  selectStatement => `asdasdsd`, //select the data for the column rows
+                  updateStatement => `asdasdsd`
+                  ));
+
+
+
+if(isset($_POST["getRecords"])){
+    $arr = array("colHeaders" => array("Name","Family","Friends","Date","Time"),
+                 "rows" => array(array("<select><option>Item</option><option>Item2</option></select>", "The fam", "Carol", "23323", "324124"),
+                                 array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                 array("Anderson", "2323m", "Carol", "2343", "4543"),
+                                 array("Austin", "The fam", "Colleen", "65656", "22"),
+                                 array("Auadvgaddaadsffasstin", "The fam", "Colleen", "65656", "22"),
+                                 array("Austin", "The fam", "Colleen", "65656", "22"),
+                                 array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                  array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                   array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                    array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                     array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                      array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                       array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "The Jon", "Sam", "5656", "24545")
+
+                                 )
+                 );
+    $json = json_encode($arr);
+    echo $json;
+}
+
+?>
