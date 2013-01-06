@@ -79,26 +79,26 @@ if(isset($_POST["getRecords"]) && isset($_POST["filter"])){
     $json = json_encode($arr);
     echo $json;
 }else if(isset($_POST["getRecords"])){
-    $arr = array("colHeaders" => array("Name","Family","Friends","Date","Time"),
+    $arr = array("colHeaders" => array("Name","Family","Friaagadfadfsd sd aends","Date","Time"),
                  "rows" => array(array("<select><option>Item</option><option>Items and one2</option></select>", "The fam", "Carol", "23323", "324124"),
                                  array("Sarah", "The Jon", "Sam", "5656", "<button>Something</button>"),
-                                 array("Anderson", "2323m", "Carol", "2343", "4543"),
-                                 array("Austin", "The fam", "Colleen", "65656", "22"),
+                                 array("Anderson", "23dgsfg sds df df sd sdgasd 23m", "Carol", "2343", "4543"),
+                                 array("Austin", "The fsad sd asdfm", "Colleen", "65656", "22"),
                                  array("Auadvgaddaadsffasstin", "The fam", "Colleen", "65656", "22"),
-                                 array("Austin", "The fam", "Colleen", "65656", "22"),
+                                 array("Auafadfstin", "The fam", "Colleen", "65as ds adas d656", "22"),
                                  array("Sarah", "The Jon", "Sam", "5656", "24545"),
                                   array("Sarah", "The Jon", "Sam", "5656", "24545"),
                                    array("Sarah", "The Jon", "Sam", "5656", "24545"),
-                                    array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                    array("Sarah", "The Jon", "Sasd asdasd am", "5656", "24545"),
                                      array("Sarah", "The Jon", "Sam", "5656", "24545"),
-                                      array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                      array("Sarah", "The Jon", "Sa sad sad sd sd m", "5656", "24545"),
                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
                                         array("Sarah", "The Jon", "Sam", "5656", "24545"),
                                         array("Sarah", "The Jon", "Sam", "5656", "24545"),
                                         array("Sarah", "The Jon", "Sam", "5656", "24545"),
                                         array("Sarah", "The Jon", "Sam", "5656", "24545"),
                                         array("Sarah", "The Jon", "Sam", "5656", "24545"),
-                                        array("Sarah", "The Jon", "Sam", "5656", "24545"),
+                                        array("Sarah", "Theasd asd  Jon", "Sam", "5656", "24545"),
                                         array("Sarah", "The Jon", "Sam", "5656", "24545")
 
                                  )

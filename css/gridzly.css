@@ -56,11 +56,15 @@ font-size: 1.03em;
   width:100%;
   max-height: 500px;
   background: rgba(2,23,27,0.02);
+    -moz-box-sizing:content-box;
+     -webkit-box-sizing:border-box;
+    box-sizing:content-box;
 }
 .gridzlyGrid:after {
   content: "";
   display: table;
   clear: both;
+  
 }
 .gridzlyGridTitle{
     font-size: 1.5em;
@@ -95,7 +99,7 @@ font-size: 1.03em;
   margin-top: 3px;
     font-size: 1.2em;
     box-shadow: 0 1px 1px -1px rgba(2,2,2,0.5),0 0px 2px 0px rgba(2,2,2,0.1);
-    
+    overflow-y: scroll;
 }
 
 .gridzlyHeadRow,.rowHolder{
@@ -120,6 +124,9 @@ font-size: 1.03em;
        padding: 0px 9px 3px 25px;
           overflow: hidden;
           white-space: nowrap;
+              overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
 }
 
 .gridzly-more{
@@ -193,11 +200,16 @@ float: left;
     height: 40px;
     display: block;
    float: left;
-  
+    /*box-shadow: -1px 0 2px 0 rgba(2,2,2,0.2);*/
     padding: 4px 9px 3px 25px;
     white-space: nowrap;
+    cursor: default;
      overflow: hidden;
      border:1px solid rgba(2,2,2,0.2);
      border-top: 0px;
      border-right:0px;
+         white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
 }

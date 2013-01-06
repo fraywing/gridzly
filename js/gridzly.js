@@ -79,10 +79,10 @@
                                  var isIt = self.checkOverflow($grid.find('.gridzlyGrid-innerRows')[0]);
                              
                                  if(isIt == true){
-                                  $grid.find('.gridzlyHeadRow').css({"padding-right" : "19px"});
+                                  $grid.find('.gridzlyHeadRow').css({"overflow-y" : "scroll"});
                                  }else{
                                   self.addRow(5,  $grid.find('.gridzlyGrid-inner'), "Load More");
-                                   $grid.find('.gridzlyHeadRow').css({"padding-right" : "0px"});
+                                   $grid.find('.gridzlyHeadRow').css({"overflow-y" : "hidden"});
                                  }
         },
         prep : function(o){
@@ -92,7 +92,13 @@
             var colNum = 0;
              for(var x = 0; x<o.colHeaders.length; x++){
               colNum++;
-                var h = "<div class='gridzly-header row-"+colNum+"'>"+o.colHeaders[x]+"</div>"; //loops through for the headers
+                      var t;
+                      if($(o.colHeaders[x]).text()){
+                        t = $(o.colHeaders[x]).text();
+                      }else{
+                        t = o.colHeaders[x];
+                      }
+                var h = "<div class='gridzly-header row-"+colNum+"' title='"+t+"' >"+o.colHeaders[x]+"</div>"; //loops through for the headers
                 headerHtml += h;
              }
           
@@ -104,8 +110,13 @@
                   var grNum = 0;
                     for(var j in o.rows[y]){
                       grNum++;
-                      
-                        var r = "<div name='"+o.colHeaders[j]+"' class='gridzly-row row-"+grNum+"'>"+o.rows[y][j]+"</div>";
+                      var t;
+                      if($(o.rows[y][j]).text()){
+                        t = $(o.rows[y][j]).text();
+                      }else{
+                        t = o.rows[y][j];
+                      }
+                        var r = "<div name='"+o.colHeaders[j]+"' title='"+t+"' class='gridzly-row row-"+grNum+"'>"+o.rows[y][j]+"</div>";
                        rowHolder += r;
                     }
                
@@ -158,7 +169,15 @@
             var opts = par.data().opts;
            var deffer = self.addRecords(opts.maxRecordsShowing,par.attr('id'),opts.recordsUrl);
             deffer.success(function(data){
-         
+              
+               var par = $('#'+opts.id);
+                           var isIt = self.checkOverflow(par.find('.gridzlyGrid-innerRows')[0]);
+                                 if(isIt == true){
+                                  par.find('.gridzlyHeadRow').css({"overflow-y" : "scroll"});
+                                 }else{
+                                   par.find('.gridzlyHeadRow').css({"overflow-y" : "hidden"});
+                                 }
+                                 
               $('#'+opts.id).find('.gridzlyGrid-innerRows').append(self.prep(JSON.parse(data)).rows);
                 $('.gridzly-temp').empty().remove();
                 });
